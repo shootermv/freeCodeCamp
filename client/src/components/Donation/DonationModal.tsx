@@ -22,8 +22,6 @@ import {
 
 import './Donation.css';
 
-console.log(closeDonationModal);
-
 const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
   recentlyClaimedBlockSelector,
