@@ -71,7 +71,14 @@
   height: 24px;
   margin: 7px 0;
 }
-
+@media (max-width: 455px) {
+  #universal-nav-logo svg {
+    display: block;
+    width: auto;
+    height: 14px;
+    margin: 13px 0;
+  }
+}
 .nav-list {
   display: none;
   position: absolute;
@@ -573,13 +580,16 @@ button.nav-link[aria-disabled='true'] {
     display: flex;
   }
 
+  /*
   .navatar .signup-btn {
     display: none;
   }
+  
 
   .navatar {
     display: none;
   }
+  */
 
   #universal-nav-logo {
     max-width: 60%;
