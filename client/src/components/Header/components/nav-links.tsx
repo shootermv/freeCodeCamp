@@ -352,6 +352,13 @@ export class NavLinks extends Component<NavLinksProps, {}> {
             <FontAwesomeIcon icon={faExternalLinkAlt} />
           </Link>
         </li>
+        {!username && (
+          <li className='nav-line'>
+            <button className='nav-link nav-link-flex'>
+              {t('buttons.sign-in')}
+            </button>
+          </li>
+        )}
         <li className='nav-line' key='theme'>
           <button
             {...(!username && { 'aria-describedby': 'theme-sign-in' })}
