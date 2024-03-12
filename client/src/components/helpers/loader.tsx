@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import Spinner from 'react-spinkit';
+import Spinner from '../../assets/images/loader.svg';
 
 import './loader.css';
 
@@ -37,7 +37,7 @@ function Loader({
       className={`fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''}`}
       data-testid='fcc-loader'
     >
-      {showSpinner && <Spinner name='line-scale-pulse-out' />}
+      {showSpinner && <img src={Spinner} alt='loading' />}
       {showMessage && fullScreen && (
         <>
           <br />
