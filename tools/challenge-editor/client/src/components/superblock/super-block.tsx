@@ -39,7 +39,7 @@ const SuperBlock = () => {
   return (
     <div>
       <h1>{params.superblock}</h1>
-      <ul>
+      <ul className='items-list'>
         {items.map(block => (
           <li key={block.name}>
             <Link to={`/${params.superblock}/${block.path}`}>{block.name}</Link>

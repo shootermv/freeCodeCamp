@@ -58,8 +58,8 @@ const Block = () => {
   return (
     <div>
       <h1>{params.block}</h1>
-      <span className='breadcrumb'>{params.superblock}</span>
-      <ul className='step-grid'>
+      {/*<span className='breadcrumb'>{params.superblock}</span>*/}
+      <ul className='step-grid_ items-list'>
         {items.map((challenge, i) => (
           <li key={challenge.name}>
             {!isStepBasedSuperblock && <span>{`${i + 1}: `}</span>}

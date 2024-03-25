@@ -35,16 +35,16 @@ const Landing = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div>
+    <main>
       <h1>Superblocks</h1>
-      <ul>
+      <ul className='items-list'>
         {items.map(superblock => (
           <li key={superblock.name}>
             <Link to={`/${superblock.path}`}>{superblock.name}</Link>
           </li>
         ))}
       </ul>
-    </div>
+    </main>
   );
 };
 

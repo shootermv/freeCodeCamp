@@ -1,0 +1,11 @@
+.items-list {
+  max-width: 47em;
+  margin: 0 auto;
+  li {
+    padding: 0.6em;
+    border-bottom: 1px solid #fff;
+    a {
+      text-decoration: none;
+    }
+  }
+}
