@@ -1,12 +1,10 @@
-import { faAward, faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { faAward } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { Col, Row } from '@freecodecamp/ui';
 
-import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../../shared/config/i18n';
 import type { User } from '../../../../redux/prop-types';
 import { AvatarRenderer } from '../../../helpers';
 import Link from '../../../helpers/link';
@@ -15,10 +13,7 @@ import SocialIcons from '../social-icons';
 import './camper.css';
 import Badges from './badges';
 import Statistics from './statistics';
-
-const { clientLocale } = envData;
-
-const localeCode = getLangCode(clientLocale);
+import Bio from './bio';
 
 export type CamperProps = Pick<
   User,
@@ -50,25 +45,12 @@ function joinArray(array: string[], t: TFunction): string {
   });
 }
 
-function parseDate(joinDate: string, t: TFunction): string {
-  const convertedJoinDate = new Date(joinDate);
-  const date = convertedJoinDate.toLocaleString([localeCode, 'en-US'], {
-    year: 'numeric',
-    month: 'long'
-  });
-  return t('profile.joined', { date: date });
-}
-
 function Camper({
-  name,
   username,
-  location,
   picture,
-  about,
   yearsTopContributor,
   githubProfile,
   isDonating,
-  joinDate,
   linkedin,
   twitter,
   website
@@ -93,10 +75,7 @@ function Camper({
         website={website}
       />
       <br />
-      <h2 className='username'>@{username}</h2>
-      {name && <p className='name'>{name}</p>}
-      {about && <p className='bio'>{about}</p>}
-      {location && <p className='location'>{location}</p>}
+
       {isDonating && (
         <p className='supporter'>
           <SupporterBadge />
@@ -104,13 +83,10 @@ function Camper({
         </p>
       )}
 
-      {joinDate && (
-        <p className='bio '>
-          <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate, t)}
-        </p>
-      )}
-      <Badges />
+      <Bio />
       <Statistics />
+      <Badges />
+
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
           <br />
