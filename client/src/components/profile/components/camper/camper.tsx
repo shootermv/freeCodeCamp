@@ -13,6 +13,8 @@ import Link from '../../../helpers/link';
 import SupporterBadge from '../../../../assets/icons/supporter-badge';
 import SocialIcons from '../social-icons';
 import './camper.css';
+import Badges from './badges';
+import Statistics from './statistics';
 
 const { clientLocale } = envData;
 
@@ -107,8 +109,8 @@ function Camper({
           <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate, t)}
         </p>
       )}
-      <hr />
-      <h3>Badges</h3>
+      <Badges />
+      <Statistics />
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
           <br />
