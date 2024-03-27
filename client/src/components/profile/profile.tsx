@@ -7,7 +7,7 @@ import { Container, Row } from '@freecodecamp/ui';
 import { FullWidthRow, Link, Spacer } from '../helpers';
 import { User } from './../../redux/prop-types';
 import Timeline from './components/time-line';
-import Camper from './components/camper';
+import Camper from './components/camper/camper';
 import Certifications from './components/certifications';
 import HeatMap from './components/heat-map';
 import { PortfolioProjects } from './components/portfolio-projects';

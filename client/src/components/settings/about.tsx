@@ -12,7 +12,7 @@ import isURL from 'validator/lib/isURL';
 
 import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
-import type { CamperProps } from '../profile/components/camper';
+import type { CamperProps } from '../profile/components/camper/camper';
 import SoundSettings from './sound';
 import ThemeSettings, { type ThemeProps } from './theme';
 import UsernameSettings from './username';

@@ -5,13 +5,13 @@ import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { Col, Row } from '@freecodecamp/ui';
 
-import envData from '../../../../config/env.json';
-import { getLangCode } from '../../../../../shared/config/i18n';
-import type { User } from '../../../redux/prop-types';
-import { AvatarRenderer } from '../../helpers';
-import Link from '../../helpers/link';
-import SupporterBadge from '../../../assets/icons/supporter-badge';
-import SocialIcons from './social-icons';
+import envData from '../../../../../config/env.json';
+import { getLangCode } from '../../../../../../shared/config/i18n';
+import type { User } from '../../../../redux/prop-types';
+import { AvatarRenderer } from '../../../helpers';
+import Link from '../../../helpers/link';
+import SupporterBadge from '../../../../assets/icons/supporter-badge';
+import SocialIcons from '../social-icons';
 import './camper.css';
 
 const { clientLocale } = envData;
