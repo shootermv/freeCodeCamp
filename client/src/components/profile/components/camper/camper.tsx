@@ -1,10 +1,8 @@
 import { faAward } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { Col, Row } from '@freecodecamp/ui';
-
 import type { User } from '../../../../redux/prop-types';
 import { AvatarRenderer } from '../../../helpers';
 import Link from '../../../helpers/link';
@@ -14,6 +12,7 @@ import './camper.css';
 import Badges from './badges';
 import Statistics from './statistics';
 import Bio from './bio';
+import { joinArray } from './utils';
 
 export type CamperProps = Pick<
   User,
@@ -30,20 +29,6 @@ export type CamperProps = Pick<
   | 'name'
   | 'joinDate'
 >;
-
-function joinArray(array: string[], t: TFunction): string {
-  return array.reduce((string, item, index, array) => {
-    if (string.length > 0) {
-      if (index === array.length - 1) {
-        return `${string} ${t('misc.and')} ${item}`;
-      } else {
-        return `${string}, ${item}`;
-      }
-    } else {
-      return item;
-    }
-  });
-}
 
 function Camper({
   username,
