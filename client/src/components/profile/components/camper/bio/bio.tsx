@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import './bio.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar, faLocation } from '@fortawesome/free-solid-svg-icons';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { getLangCode } from '../../../../../../../shared/config/i18n';
@@ -23,19 +23,19 @@ const Bio = () => {
   return (
     <section className='flex-col padding-vertical-3'>
       <h2 className='username'>@{username}</h2>
-      {name && <p className='name'>{name}</p>}
+      {name && <p className='name gray-color'>{name}</p>}
       {about && <p className='bio'>{about}</p>}
       <div className='flex gap-1'>
         {joinDate && (
-          <div className='bio'>
+          <div className='gray-color'>
             <FontAwesomeIcon icon={faCalendar} />
-            {parseDate(joinDate, t)}
+            <span>{parseDate(joinDate, t)}</span>
           </div>
         )}
         {location && (
-          <div className='location'>
-            <FontAwesomeIcon icon={faCalendar} />
-            From {location}
+          <div className='gray-color'>
+            <FontAwesomeIcon icon={faLocation} />
+            <span>From: {location}</span>
           </div>
         )}
       </div>

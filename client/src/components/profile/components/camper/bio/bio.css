@@ -1,3 +1,10 @@
 .gap-1 {
   gap: 20px;
 }
+.gray-color {
+  color: #5b5b5b;
+  span {
+    display: inline-block;
+    margin-left: 6px;
+  }
+}
