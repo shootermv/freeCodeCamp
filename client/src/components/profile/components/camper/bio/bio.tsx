@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './bio.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faLocation } from '@fortawesome/free-solid-svg-icons';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { getLangCode } from '../../../../../../../shared/config/i18n';
 import envData from '../../../../../../config/env.json';
-import { UserCtx } from '../../../contexts/user-context';
+import { userSelector } from '../../../../../redux/selectors';
+import { User } from '../../../../../redux/prop-types';
 const { clientLocale } = envData;
 const localeCode = getLangCode(clientLocale);
 function parseDate(joinDate: string, t: TFunction): string {
@@ -19,23 +21,25 @@ function parseDate(joinDate: string, t: TFunction): string {
 }
 const Bio = () => {
   const { t } = useTranslation();
-  const { joinDate, location, username, name, about } = useContext(UserCtx);
+  const { joinDate, location, username, name, about } = useSelector(
+    userSelector
+  ) as User;
   return (
     <section className='flex-col padding-vertical-3'>
       <h2 className='username'>@{username}</h2>
       {name && <p className='name gray-color'>{name}</p>}
       {about && <p className='bio'>{about}</p>}
-      <div className='flex gap-1'>
+      <div className='flex gap-1 flex-col md:flex-row'>
         {joinDate && (
-          <div className='gray-color'>
-            <FontAwesomeIcon icon={faCalendar} />
-            <span>{parseDate(joinDate, t)}</span>
+          <div>
+            <FontAwesomeIcon icon={faCalendar} className='light-gray-color' />
+            <span className='gray-color'>{parseDate(joinDate, t)}</span>
           </div>
         )}
         {location && (
-          <div className='gray-color'>
-            <FontAwesomeIcon icon={faLocation} />
-            <span>From: {location}</span>
+          <div>
+            <FontAwesomeIcon icon={faLocation} className='light-gray-color' />
+            <span className='gray-color'>From: {location}</span>
           </div>
         )}
       </div>
