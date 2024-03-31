@@ -307,7 +307,7 @@
     "add-twitter": "Share this certification on Twitter",
     "tweet": "I just earned the {{certTitle}} certification @freeCodeCamp! Check it out here: {{certURL}}",
     "avatar": "{{username}}'s avatar",
-    "joined": "Joined {{date}}",
+    "joined": "Joined: {{date}}",
     "total-points": "Number of points: {{count}}",
     "points": "{{count}} point on {{date}}",
     "points_plural": "{{count}} points on {{date}}",

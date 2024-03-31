@@ -3,7 +3,7 @@ import './statistics.css';
 
 const Statistics = () => {
   return (
-    <section className='flex-col border-gray padding-vertical-3'>
+    <section className='flex-col padding-vertical-3'>
       <h3>Statistics</h3>
       <div className='flex'>
         <div className='flex-1'></div>
